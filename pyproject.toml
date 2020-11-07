@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hm310p"
+name = "hm310p-cli"
 version = "0.1.0"
 description = "Command line tool to control Hanmatek power supplies."
 license = "MIT"
