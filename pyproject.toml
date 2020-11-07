@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "Command line tool to control Hanmatek power supplies."
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/5H3LL3H5/hm310p"
-repository = "https://github.com/5H3LL3H5/hm310p"
-keywords = ["hm305p", "hm310p"] 
+homepage = "https://github.com/5H3LL3H5/hm310p-cli"
+repository = "https://github.com/5H3LL3H5/hm310p-cli"
+keywords = ["hm305p", "hm310p", "hm305p-cli", "hm310p-cli"] 
 authors = ["Christian Stenzel <christianstenzel@linux.com>"]
 
 [tool.poetry.dependencies]
