@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hm310p"
+version = "0.1.0"
+description = "Command line tool to control Hanmatek power supplies."
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/5H3LL3H5/hm310p"
+repository = "https://github.com/5H3LL3H5/hm310p"
+keywords = ["hm305p", "hm310p"] 
+authors = ["Christian Stenzel <christianstenzel@linux.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
