@@ -45,27 +45,33 @@ uMaxV=30.0
 def main(port: str, powerstate: str, vout: float, ovp: float, iout: float, ocp: float, debug: bool) -> int:
     """The hm310p command line interface"""
 
+    adaptedOVP=""
+    adaptedOCP=""
+
     if ovp is None:
         """ovp value five percent higher than vout value"""
         ovp = 1.05 * vout
+        adaptedOVP=" => OVP not given, set 5% larger than Vout"
         if ovp>uMaxV:
             ovp=uMaxV
+            adaptedOVP=f" => OVP not given, clipped to {uMaxV:02.3f} V"
 
     if ocp is None:
         """ocp value five percent higher than iout value"""
         ocp = 1.05 * iout
+        adaptedOCP=" => OCP not given, set 5% larger than Iout"
         if ocp>iMaxA:
             ocp=iMaxA
+            adaptedOCP=f" => OCP not given, clipped to {iMaxA:02.3f} A"
 
-    adaptedOVP=""
     if ovp<vout:
-        ovp=vout
-        adaptedOVP="\t(Adapted to Vout)"
+        raise click.BadOptionUsage("ovp",
+                f"OVP={ovp:02.3f} V < Vout={vout:02.3f} V")
 
-    adaptedOCP=""
     if ocp<iout:
-        ocp=iout
-        adaptedOCP="\t(Adapted to Iout)"
+        raise click.BadOptionUsage("ocp",
+                f"OCP={ocp:02.3f} A < Iout={iout:02.3f} A")
+
 
     if debug:
         click.secho("Welcome to the hm310p command line interface.",
