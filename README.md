@@ -1,2 +1,3 @@
 # hm310p-cli
-https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
+https://cjolowicz.github.io/posts/hypermodern-python-02-testing/
