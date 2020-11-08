@@ -50,7 +50,7 @@ uMaxV=30.0
 @click.option('-D', '--debug', is_flag=True) 
 @click.version_option(version=__version__)
 
-def main(port, powerstate, vout, ovp, iout, ocp, debug):
+def main(port: str, powerstate: str, vout: float, ovp: float, iout: float, ocp: float, debug: bool) -> int:
     """The hm310p command line interface"""
     if debug:
         click.secho("Welcome to the hm310p command line interface.",
