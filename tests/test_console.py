@@ -40,11 +40,11 @@ def test_main_succeeds_with_input_vout_range_min(runner):
     result = runner.invoke(console.main, "--vout 0")
     assert result.exit_code == 0
 
-def test_main_succeeds_with_input_vout_out_of_range_max(runner):
+def test_main_fails_with_input_vout_out_of_range_max(runner):
     result = runner.invoke(console.main, "--vout 50")
     assert result.exit_code != 0
 
-def test_main_succeeds_with_input_vout_out_of_range_min(runner):
+def test_main_fails_with_input_vout_out_of_range_min(runner):
     result = runner.invoke(console.main, "--vout -50")
     assert result.exit_code != 0
 
@@ -56,10 +56,10 @@ def test_main_succeeds_with_input_iout_out_range_min(runner):
     result = runner.invoke(console.main, "--iout 0")
     assert result.exit_code == 0
 
-def test_main_succeeds_with_input_iout_out_of_range_max(runner):
+def test_main_fails_with_input_iout_out_of_range_max(runner):
     result = runner.invoke(console.main, "--iout 50")
     assert result.exit_code != 0
 
-def test_main_succeeds_with_input_iout_out_of_range_min(runner):
+def test_main_fails_with_input_iout_out_of_range_min(runner):
     result = runner.invoke(console.main, "--iout -50")
     assert result.exit_code != 0
