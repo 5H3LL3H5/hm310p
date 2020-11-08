@@ -10,7 +10,7 @@ keywords = ["hm305p", "hm310p", "hm305p-cli", "hm310p-cli"]
 authors = ["Christian Stenzel <christianstenzel@linux.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.6.9"
 click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
