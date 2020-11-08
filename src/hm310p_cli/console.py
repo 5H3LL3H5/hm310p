@@ -15,23 +15,17 @@ uMaxV=30.0
               '--port',
               type=str,
               help='Serial device',
-              required=True,
-              default='',
-              show_default=True)
-@click.option('-ps',
+              required=True)
+@click.option('-s',
               '--powerstate',
               type=click.Choice(['on', 'off'], case_sensitive=False),
               help='Power supply switch',
-              required=True,
-              default='off', 
-              show_default=True)
+              required=True)
 @click.option('-V',
               '--vout',
               type=click.FloatRange(uMinV, uMaxV),
               help="Output voltage in Volt",
-              required=True,
-              default=uMinV,
-              show_default=True)
+              required=True)
 @click.option('--ovp',
               type=click.FloatRange(uMinV, uMaxV),
               help="Over voltage protection value in Volt",
@@ -40,9 +34,7 @@ uMaxV=30.0
               '--iout',
               type=click.FloatRange(iMinA, iMaxA),
               help="Output current in Ampere",
-              required=True,
-              default=iMinA,
-              show_default=True)
+              required=True)
 @click.option('--ocp',
               type=click.FloatRange(iMinA, iMaxA),
               help="Over current protection value in Ampere",
