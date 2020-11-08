@@ -52,9 +52,6 @@ uMaxV=30.0
 
 def main(port: str, powerstate: str, vout: float, ovp: float, iout: float, ocp: float, debug: bool) -> int:
     """The hm310p command line interface"""
-    if debug:
-        click.secho("Welcome to the hm310p command line interface.",
-                     fg="green")
 
     if ovp is None:
         """ovp value five percent higher than vout value"""
@@ -79,6 +76,8 @@ def main(port: str, powerstate: str, vout: float, ovp: float, iout: float, ocp: 
         adaptedOCP="\t(Adapted to Iout)"
 
     if debug:
+        click.secho("Welcome to the hm310p command line interface.",
+                     fg="green")
         click.echo(f"Port\t\t: {port}")
         click.echo(f"Powerstate\t: {powerstate}")
         click.echo(f"Vout\t\t: {vout:02.3f} V")
