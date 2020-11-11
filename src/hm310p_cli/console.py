@@ -72,7 +72,6 @@ def main(port: str, powerstate: str, vout: float, ovp: float, iout: float, ocp: 
         raise click.BadOptionUsage("ocp",
                 f"OCP={ocp:02.3f} A < Iout={iout:02.3f} A")
 
-
     if debug:
         click.secho("Welcome to the hm310p command line interface.",
                      fg="green")
