@@ -1,2 +1,5 @@
 - add mypy to poetry configuration for type checking at runtime
 - replace click by clickutil
+- add mocking serial class
+- add class test
+- rename hm310p in hm3xxp
