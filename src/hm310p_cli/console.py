@@ -1,9 +1,6 @@
 # src/hm310p_cli/console.py
 # -*- coding: utf-8 -*-
 
-# stdlib import
-import time
-
 # third party imports
 import click
 
@@ -63,7 +60,7 @@ def main(
     iout: float,
     ocp: float,
     debug: bool,
-) -> int:
+) -> None:
     """The hm310p command line interface"""
 
     adaptedOVP = ""
@@ -103,17 +100,24 @@ def main(
     psupply = HM310P(port, 1)
 
     if powerstate == "on":
+        psupply.set_opp()
+        print(f"OPP: {psupply.get_opp():2.3f}")
+        # Iocp = 0.750 A, Iout = 0.5 A, Uout = 24 V, Uovp = 24.05 V
         psupply.set_ocp(ocp)
         psupply.set_current(iout)
-        time.sleep(1)
         psupply.set_ovp(ovp)
-        time.sleep(1)
-        psupply.set_voltage(vout)
-        time.sleep(1)
+        psupply.set_voltage(vout, "Preset")
+        psupply.get_voltage("Output")
+        psupply.get_voltage("Protection")
+        psupply.set_opp(iout * vout)
+        print(f"OPP CONSOLE: {psupply.get_opp():2.3f}")
         psupply.set_powerstate(PowerState.On)
+        psupply.set_voltage_and_current_of_channel_list(
+            ["Output", "Preset", "Protection", "M1", "M2", "M3", "M4", "M5", "M6"],
+            10.10,
+            5.555,
+        )
     else:
         psupply.set_voltage(0)
         psupply.set_current(0)
         psupply.set_powerstate(PowerState.Off)
-
-    return 0

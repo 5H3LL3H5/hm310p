@@ -62,27 +62,32 @@ class HM3xxpRegisters(IntEnum):
     M1_A = 0x1001  # also PSM_Voltage, RW, Current limte
     M1_Time = 0x1002  # also PSM_Voltage, RW, Time Span
     M1_Enable = 0x1003  # also PSM_Voltage, RW, Enable/Disable in List
-    PSM_NextOffset = 0x1004  # ?
+    M1_NextOffset = 0x1004  # ?
     M2_V = 0x1010  # RW, Voltage - for M2
     M2_A = 0x1011  # RW, Current limte
     M2_Time = 0x1012  # RW, Time Span
     M2_Enable = 0x1013  # RW, Enable/Disable in List
+    M2_NextOffset = 0x1014  # ?
     M3_V = 0x1020  # RW, Voltage - for M3
     M3_A = 0x1021  # RW, Current limte
     M3_Time = 0x1022  # RW, Time Span
     M3_Enable = 0x1023  # RW, Enable/Disable in List
+    M3_NextOffset = 0x1024  # ?
     M4_V = 0x1030  # RW, Voltage - for M4
     M4_A = 0x1031  # RW, Current limte
     M4_Time = 0x1032  # RW, Time Span
     M4_Enable = 0x1033  # RW, Enable/Disable in List
+    M4_NextOffset = 0x1034  # ?
     M5_V = 0x1040  # RW, Voltage - for M5
     M5_A = 0x1041  # RW, Current limte
     M5_Time = 0x1042  # RW, Time Span
     M5_Enable = 0x1043  # RW, Enable/Disable in List
+    M5_NextOffset = 0x1044  # ?
     M6_V = 0x1050  # RW, Voltage - for M5
     M6_A = 0x1051  # RW, Current limte
     M6_Time = 0x1052  # RW, Time Span
     M6_Enable = 0x1053  # RW, Enable/Disable in List
+    M6_NextOffset = 0x1054  # ?
 
     @classmethod
     def has_key(cls, name: str) -> bool:
