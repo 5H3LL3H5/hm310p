@@ -16,12 +16,12 @@ uMinV: float = 0.0
 uMaxV: float = 30.0
 
 arglist = [
-    "--port={sport}",
-    "--powerstate=off",
-    "--vout={vout:02.2f}",
-    "--iout={iout:02.3f}",
-    "--ovp={ovp:02.2f}",
-    "--ocp={ocp:02.3f}",
+    f"--port={sport}",
+    f"--powerstate=off",
+    f"--vout={vout:02.2f}",
+    f"--iout={iout:02.3f}",
+    f"--ovp={ovp:02.2f}",
+    f"--ocp={ocp:02.3f}",
     "--debug",
 ]
 
